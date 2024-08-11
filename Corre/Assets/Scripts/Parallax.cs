@@ -1,39 +1,28 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class Parallax : MonoBehaviour
 {
-    [SerializeField] private float parallax;
-    private Transform cameraTransform;
-    private Vector3 previousCameraPosition;
-    private float spriteWidth, startPosition;
+    private float length, startpos;
+    public GameObject cam;
+    public float parallaxEffect;
 
-    void Start()
+    private void Start()
     {
-        cameraTransform = Camera.main.transform;
-        previousCameraPosition = cameraTransform.position;
-        spriteWidth = GetComponent<SpriteRenderer>().bounds.size.x;
-        startPosition = transform.position.x;
+        startpos = transform.position.x;
+        length = GetComponent<SpriteRenderer>().bounds.size.x;
     }
 
-
-    void LateUpdate()
+    private void FixedUpdate()
     {
-        float deltaX = (cameraTransform.position.x - previousCameraPosition.x) * parallax;
-        float moveAmount = cameraTransform.position.x * (1 - parallax);
-        transform.Translate(new Vector3(deltaX, 0, 0));
-        previousCameraPosition = cameraTransform.position;
+        float temp = (cam.transform.position.x * (1 - parallaxEffect));
+        float dist = (cam.transform.position.x * parallaxEffect);
 
-        if (moveAmount > startPosition + spriteWidth)
-        {
-            transform.Translate(new Vector3(spriteWidth, 0, 0));
-            startPosition += spriteWidth;
-        }
-        else if(moveAmount < startPosition - spriteWidth)
-        {
-            transform.Translate(new Vector3(-spriteWidth, 0, 0));
-            startPosition -= spriteWidth;
-        }
+        transform.position = new Vector3(startpos + dist, transform.position.y, transform.position.z);
+
+        if (temp > startpos + length) startpos += length;
+        else if (temp < startpos - length) startpos -= length;
     }
 }
