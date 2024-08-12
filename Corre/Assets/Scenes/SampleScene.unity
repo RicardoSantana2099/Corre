@@ -1921,6 +1921,53 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &596018009
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 596018011}
+  - component: {fileID: 596018010}
+  m_Layer: 0
+  m_Name: CambioColor
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &596018010
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 596018009}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31abb0084e56e2f4f976b93163237e9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  colorScenario: {fileID: 1554232032}
+  blackWhiteScenario: {fileID: 1709807840}
+  transitionSpeed: 1
+--- !u!4 &596018011
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 596018009}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 9.748795, y: 1.7167629, z: -0.007492986}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &616616751
 GameObject:
   m_ObjectHideFlags: 0
@@ -2637,7 +2684,6 @@ GameObject:
   m_Component:
   - component: {fileID: 769599827}
   - component: {fileID: 769599830}
-  - component: {fileID: 769599828}
   m_Layer: 0
   m_Name: 7B (1)
   m_TagString: Untagged
@@ -2660,20 +2706,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2038426283}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &769599828
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 769599826}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 339a8e3961f184c4da2ac2ec9e435d18, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cam: {fileID: 519420028}
-  parallaxEffect: 0
 --- !u!212 &769599830
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6032,3 +6064,4 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 168379432}
+  - {fileID: 596018011}
